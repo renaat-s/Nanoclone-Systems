@@ -1,0 +1,44 @@
+.custom-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.btn-premium {
+    padding: 1rem 2.5rem;
+    border-radius: 100px;
+    background: white;
+    color: black;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn-premium .shimmer {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    to {
+        left: 200%;
+    }
+}
