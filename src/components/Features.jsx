@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Zap, Brain, Shield, ArrowRight } from 'lucide-react';
 import invoiceiqLogo from '../assets/invoiceiq-logo.png';
+import pyresecIcon from '../assets/pyresec-icon.png';
 import abstractVideo from '../assets/abstract.mp4';
 import './Features.css';
 
 const features = [
-    { icon: Zap, title: "BookScanIQ", description: "Precision-engineered financial agents with integrated n8n orchestration. High-throughput data synthesis and reconciliation.", span: "span 12", delay: 0.1, useCustomIcon: true, link: "https://bookscaniq.com/", expandedContent: "BookScanIQ's enterprise architecture automates the lifecycle of every invoice and receipt with a verified 99% accuracy threshold. By orchestrating seamless extraction and validation, we eliminate manual volatility—reclaiming your team's most valuable asset: time." }
+    { icon: Zap, title: "BookScanIQ", description: "Precision-engineered financial agents with integrated n8n orchestration. High-throughput data synthesis and reconciliation.", span: "span 12", delay: 0.1, useCustomIcon: true, link: "https://bookscaniq.com/", expandedContent: "BookScanIQ's enterprise architecture automates the lifecycle of every invoice and receipt with a verified 99% accuracy threshold. By orchestrating seamless extraction and validation, we eliminate manual volatility—reclaiming your team's most valuable asset: time." },
+    { icon: Zap, title: "PYRESEC", description: "AI-powered code security auditing via x402 micropayments on Base. SAST, SCA, and automated remediation with no accounts or subscriptions.", span: "span 12", delay: 0.2, useCustomIcon: true, iconSrc: pyresecIcon, link: "https://pyresec-agent-519576377065.us-central1.run.app/docs", expandedContent: "PYRESEC autonomously audits source code for vulnerabilities using SAST pattern matching and LLM-driven analysis. Three service tiers — Quick Scan at $0.01, Deep Audit at $0.50, and Automated Remediation at $5.00 — all paid via x402 USDC micropayments on Base Mainnet. No API keys, no accounts, just code in and findings out." }
 ];
 
-const FeatureCard = ({ title, description, icon: Icon, span = "span 12", delay = 0, useCustomIcon = false, link = "#", expandedContent }) => {
+const FeatureCard = ({ title, description, icon: Icon, span = "span 12", delay = 0, useCustomIcon = false, iconSrc = null, link = "#", expandedContent }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const handleExpandClick = (e) => {
@@ -34,7 +36,7 @@ const FeatureCard = ({ title, description, icon: Icon, span = "span 12", delay =
                 <div className="bento-header">
                     <div className="bento-icon-wrapper">
                         {useCustomIcon ? (
-                            <img src={invoiceiqLogo} alt={title} className="bento-custom-icon" />
+                            <img src={iconSrc || invoiceiqLogo} alt={title} className="bento-custom-icon" />
                         ) : (
                             <Icon className="bento-icon" />
                         )}
@@ -95,6 +97,7 @@ const Features = () => {
                             span={feature.span}
                             delay={feature.delay}
                             useCustomIcon={feature.useCustomIcon}
+                            iconSrc={feature.iconSrc}
                             link={feature.link}
                             expandedContent={feature.expandedContent}
                         />
