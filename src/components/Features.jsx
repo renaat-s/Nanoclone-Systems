@@ -6,7 +6,7 @@ import abstractVideo from '../assets/abstract.mp4';
 import './Features.css';
 
 const features = [
-    { icon: Zap, title: "InvoiceIQ", description: "Precision-engineered financial agents with integrated n8n orchestration. High-throughput data synthesis and reconciliation.", span: "span 12", delay: 0.1, useCustomIcon: true, link: "https://invoice-iq.com/", expandedContent: "InvoiceIQ's enterprise architecture automates the lifecycle of every invoice and receipt with a verified 99% accuracy threshold. By orchestrating seamless extraction and validation, we eliminate manual volatility—reclaiming your team's most valuable asset: time." }
+    { icon: Zap, title: "BookScanIQ", description: "Precision-engineered financial agents with integrated n8n orchestration. High-throughput data synthesis and reconciliation.", span: "span 12", delay: 0.1, useCustomIcon: true, link: "https://bookscaniq.com/", expandedContent: "BookScanIQ's enterprise architecture automates the lifecycle of every invoice and receipt with a verified 99% accuracy threshold. By orchestrating seamless extraction and validation, we eliminate manual volatility—reclaiming your team's most valuable asset: time." }
 ];
 
 const FeatureCard = ({ title, description, icon: Icon, span = "span 12", delay = 0, useCustomIcon = false, link = "#", expandedContent }) => {
