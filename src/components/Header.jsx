@@ -14,7 +14,6 @@ const Header = () => {
       <div className="header-v2-container glass">
         <div className="header-logo">
           <span className="logo-main">NANOCLONE SYSTEMS</span>
-          <div className="logo-version">V4.0</div>
         </div>
 
         <nav className="header-nav">

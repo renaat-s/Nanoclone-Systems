@@ -4,13 +4,15 @@ import { Zap, Brain, Shield, ArrowRight } from 'lucide-react';
 import invoiceiqLogo from '../assets/invoiceiq-logo.png';
 import pyresecIcon from '../assets/pyresec-icon.png';
 import scrapetraIcon from '../assets/scrapetra-icon.png';
+import duplidraftIcon from '../assets/duplidraft-icon.jpg';
 import abstractVideo from '../assets/abstract.mp4';
 import './Features.css';
 
 const features = [
     { icon: Zap, title: "BookScanIQ", description: "Precision-engineered financial agents with integrated n8n orchestration. High-throughput data synthesis and reconciliation.", span: "span 12", delay: 0.1, useCustomIcon: true, link: "https://bookscaniq.com/", expandedContent: "BookScanIQ's enterprise architecture automates the lifecycle of every invoice and receipt with a verified 99% accuracy threshold. By orchestrating seamless extraction and validation, we eliminate manual volatility—reclaiming your team's most valuable asset: time." },
     { icon: Zap, title: "PYRESEC", description: "AI-powered code security auditing via x402 micropayments on Base. SAST, SCA, and automated remediation with no accounts or subscriptions.", span: "span 12", delay: 0.2, useCustomIcon: true, iconSrc: pyresecIcon, link: "https://pyresec-agent-519576377065.us-central1.run.app/docs", expandedContent: "PYRESEC autonomously audits source code for vulnerabilities using SAST pattern matching and LLM-driven analysis. Three service tiers — Quick Scan at $0.01, Deep Audit at $0.50, and Automated Remediation at $5.00 — all paid via x402 USDC micropayments on Base Mainnet. No API keys, no accounts, just code in and findings out." },
-    { icon: Zap, title: "ScrapeTra", description: "Autonomous B2B lead generation agent. Scrapes, verifies, and delivers verified company leads with instant outreach and CSV delivery.", span: "span 12", delay: 0.3, useCustomIcon: true, iconSrc: scrapetraIcon, link: "https://www.scrapetra.com", expandedContent: "ScrapeTra autonomously scrapes and verifies business leads from public directories and company websites. Every lead is syntax-checked and MX-validated against DNS records. Fresh data harvested today — not recycled from stale databases. Purchase a lead package and receive verified contacts with instant pitch outreach, automated follow-up drip sequences, and CSV delivery within 60 seconds of payment. One-time price with no subscription." }
+    { icon: Zap, title: "ScrapeTra", description: "Autonomous B2B lead generation agent. Scrapes, verifies, and delivers verified company leads with instant outreach and CSV delivery.", span: "span 12", delay: 0.3, useCustomIcon: true, iconSrc: scrapetraIcon, link: "https://www.scrapetra.com", expandedContent: "ScrapeTra autonomously scrapes and verifies business leads from public directories and company websites. Every lead is syntax-checked and MX-validated against DNS records. Fresh data harvested today — not recycled from stale databases. Purchase a lead package and receive verified contacts with instant pitch outreach, automated follow-up drip sequences, and CSV delivery within 60 seconds of payment. One-time price with no subscription." },
+    { icon: Zap, title: "DupliDraft", description: "An autonomous AI agent that ingests complex enterprise RFPs and instantly generates fully compliant, multi-page proposal decks.", span: "span 12", delay: 0.4, useCustomIcon: true, iconSrc: duplidraftIcon, link: "#contact", expandedContent: "DupliDraft automates the high-ticket B2B sales cycle by combining intelligent document parsing, deep-context retrieval, and automated security verification. It analyzes incoming Request for Proposal (RFP) documents and vendor questionnaires, cross-references your company's historical winning bids and security telemetry, and produces customized, submission-ready proposal documents in minutes." }
 ];
 
 const FeatureCard = ({ title, description, icon: Icon, span = "span 12", delay = 0, useCustomIcon = false, iconSrc = null, link = "#", expandedContent }) => {
@@ -22,11 +24,12 @@ const FeatureCard = ({ title, description, icon: Icon, span = "span 12", delay =
         setIsExpanded(!isExpanded);
     };
 
+    const isExternal = link && link.startsWith('http');
+
     return (
         <motion.a
             href={link}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
             className={`bento-card ${isExpanded ? 'expanded' : ''}`}
             style={{ gridColumn: span }}
             initial={{ opacity: 0, y: 20 }}
@@ -85,7 +88,7 @@ const Features = () => {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="section-title">Autonomous <span className="text-gradient">Solutions</span></h2>
+                    <h2 className="section-title">Our Autonomous <span className="text-gradient">Solutions</span></h2>
                     <p className="section-subtitle">Tactile architecture for decentralized business logic.</p>
                 </motion.div>
 

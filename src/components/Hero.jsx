@@ -50,7 +50,6 @@ const Hero = () => {
                     transition={{ delay: 0.8, duration: 1 }}
                 >
                     Tactile Intelligence for Global Enterprise.
-                    <span className="sculpted-badge">Proprietary V4.0</span>
                 </motion.p>
 
                 <motion.div
@@ -60,12 +59,18 @@ const Hero = () => {
                     transition={{ delay: 1.2 }}
                 >
                     <Magnetic strength={0.1}>
-                        <button className="btn-premium">
+                        <a
+                            href="https://calendly.com/renaat-sibanda23/30min"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-premium"
+                            style={{ textDecoration: 'none' }}
+                        >
                             Initiate Discovery
                             <div className="shimmer" />
-                        </button>
+                        </a>
                     </Magnetic>
-                    <button className="btn-ghost">View Specifications</button>
+                    <a href="#about" className="btn-ghost" style={{ textDecoration: 'none' }}>View Specifications</a>
                 </motion.div>
             </div>
 
